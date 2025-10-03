@@ -4,6 +4,7 @@ let cardMen = document.querySelector(".cardMen");
 let cardgirl = document.querySelector(".cardgirl");
 let aboutPage = document.querySelector(".about");
 let contactus = document.querySelector(".contact");
+let footwear = document.querySelector(".footware");
 
 
 
@@ -12,14 +13,15 @@ function home() {
    mainPage.style.display = "flex";
    cardMen.style.display = "block";
    cardgirl.style.display = "block";
+   footwear.style.display = "block";
    blogContent.style.display = "block"
    contactus.style.display="none"
    
-   document.getElementById("blog").style.color = "black";
-   document.getElementById("shop").style.color = "black";
+   document.getElementById("blog").style.color = "white";
+   document.getElementById("shop").style.color = "white";
    document.getElementById("home").style.color = "rgb(1, 190, 190)";
-   document.getElementById("about").style.color = "black";
-   document.getElementById("contact").style.color="black";
+   document.getElementById("about").style.color = "white";
+   document.getElementById("contact").style.color="white";
 
 
 
@@ -31,16 +33,17 @@ function home() {
 function shop() {
    cardMen.style.display = "block";
    cardgirl.style.display = "block";
+   footwear.style.display = "block";
    mainPage.style.display = "none"
    blogContent.style.display = "none";
    aboutPage.style.display = "none";
    contactus.style.display="none"
    
-   document.getElementById("blog").style.color = "black";
-   document.getElementById("about").style.color = "black";
+   document.getElementById("blog").style.color = "white";
+   document.getElementById("about").style.color = "white";
    document.getElementById("shop").style.color = "rgb(1, 190, 190)"
-   document.getElementById("home").style.color = "black"
-   document.getElementById("contact").style.color="black";
+   document.getElementById("home").style.color = "white"
+   document.getElementById("contact").style.color="white";
 
 
 }
@@ -50,16 +53,17 @@ function blog() {
 
    cardMen.style.display = "none";
    cardgirl.style.display = "none";
+   footwear.style.display = "none";
    mainPage.style.display = "none";
    blogContent.style.display = "block"
    aboutPage.style.display = "none";
    contactus.style.display="none"
 
    document.getElementById("blog").style.color = "rgb(1, 190, 190)";
-   document.getElementById("home").style.color = "black"
-   document.getElementById("shop").style.color = "black"
-   document.getElementById("about").style.color = "black";
-   document.getElementById("contact").style.color="black";
+   document.getElementById("home").style.color = "white"
+   document.getElementById("shop").style.color = "white"
+   document.getElementById("about").style.color = "white";
+   document.getElementById("contact").style.color="white";
 
 
 
@@ -76,11 +80,11 @@ function about() {
    blogContent.style.display = "none";
    contactus.style.display="none";
 
-   document.getElementById("blog").style.color = "black";
-   document.getElementById("home").style.color = "black"
-   document.getElementById("shop").style.color = "black";
+   document.getElementById("blog").style.color = "white";
+   document.getElementById("home").style.color = "white"
+   document.getElementById("shop").style.color = "white";
    document.getElementById("about").style.color = "rgb(1, 190, 190)"
-   document.getElementById("contact").style.color="black";
+   document.getElementById("contact").style.color="white";
 
 
 }
@@ -93,10 +97,10 @@ function contact() {
    cardgirl.style.display = "none";
    mainPage.style.display = "none";
    blogContent.style.display = "none"
-   document.getElementById("blog").style.color = "black";
-   document.getElementById("home").style.color = "black";
-   document.getElementById("shop").style.color = "black";
-   document.getElementById("about").style.color = "black";
+   document.getElementById("blog").style.color = "white";
+   document.getElementById("home").style.color = "white";
+   document.getElementById("shop").style.color = "white";
+   document.getElementById("about").style.color = "white";
    document.getElementById("contact").style.color="rgb(1, 190, 190)"
 
 } 
