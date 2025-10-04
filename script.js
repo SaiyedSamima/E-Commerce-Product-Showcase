@@ -6,9 +6,6 @@ let aboutPage = document.querySelector(".about");
 let contactus = document.querySelector(".contact");
 let footwear = document.querySelector(".footware");
 
-
-
-
 function home() {
    mainPage.style.display = "flex";
    cardMen.style.display = "block";
@@ -24,7 +21,6 @@ function home() {
    document.getElementById("contact").style.color="white";
 }
 
-
 function shop() {
    cardMen.style.display = "block";
    cardgirl.style.display = "block";
@@ -39,13 +35,9 @@ function shop() {
    document.getElementById("shop").style.color = "rgb(1, 190, 190)"
    document.getElementById("home").style.color = "white"
    document.getElementById("contact").style.color="white";
-
-
 }
 
-
 function blog() {
-
    cardMen.style.display = "none";
    cardgirl.style.display = "none";
    footwear.style.display = "none";
@@ -59,13 +51,7 @@ function blog() {
    document.getElementById("shop").style.color = "white"
    document.getElementById("about").style.color = "white";
    document.getElementById("contact").style.color="white";
-
-
-
-
-
 }
-
 
 function about() {
    aboutPage.style.display = "block";
@@ -80,10 +66,7 @@ function about() {
    document.getElementById("shop").style.color = "white";
    document.getElementById("about").style.color = "rgb(1, 190, 190)"
    document.getElementById("contact").style.color="white";
-
-
 }
-
 
 function contact() {
    contactus.style.display="block";
@@ -97,20 +80,7 @@ function contact() {
    document.getElementById("shop").style.color = "white";
    document.getElementById("about").style.color = "white";
    document.getElementById("contact").style.color="rgb(1, 190, 190)"
-
 } 
-
-// function showCard(img){
-//    let newImg = document.getElementById("cartImg");
-//    newImg.src=img.src;
-//    document.querySelector(".fullPage").style.display="flex";
-//    contactus.style.display="none";
-//    aboutPage.style.display = "none";
-//    cardMen.style.display = "none";
-//    cardgirl.style.display = "none";
-//    mainPage.style.display = "none";
-//    blogContent.style.display = "none"
-// }
 
 function showCard(imgElem) {
     const src = imgElem.getAttribute('src');
@@ -132,14 +102,10 @@ function showCard(imgElem) {
     document.getElementById("productPrice").textContent = "$" + product.price;
     document.getElementById("productDetails").textContent = product.details;
 
-    // This is the correct place for this line:
     loadReviews(product.img);
 }
 
-
-
 // Add to Cart
-
 function addItem(){
    document.querySelector(".addCart").style.display="block";
    contactus.style.display="none";
@@ -148,15 +114,8 @@ function addItem(){
    cardgirl.style.display = "none";
    mainPage.style.display = "none";
    blogContent.style.display = "none"
-
 }
  
-// function addToCart(){
-//    alert("Added To Cart");
-//    location.reload();
-// }
-
-
 let cart = [];
 
 // Add to Cart from product detail
@@ -203,16 +162,11 @@ function updateCartUI() {
    cartCount.textContent = cart.length; // Sets the number of items
 }
 
-
 // Remove item from cart
 function removeFromCart(idx) {
     cart.splice(idx, 1);
     updateCartUI();
 }
-
-
-
-// ...existing code...
 
 // Example product data (add more as needed)
 const products = [
@@ -290,7 +244,6 @@ const products = [
   }
 ];
 
-
 function goBack() {
     document.querySelector('.fullPage').style.display = "none";
     // Show your main/shop sections again
@@ -303,10 +256,7 @@ function goBack() {
     contactus.style.display = "none";
 }
 
-
-
 // review section
-
 // Review storage (in-memory, per product)
 let reviews = {};
 let currentRating = 0;
@@ -378,3 +328,19 @@ function buyNow() {
     // Open the cart sidebar
     document.getElementById("cartSidebar").classList.add("open");
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+        navToggle.onclick = function() {
+            navMenu.classList.toggle('open');
+        };
+        // Optional: Hide nav when a link is clicked (without overwriting existing onclicks)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+            });
+        });
+    }
+});
