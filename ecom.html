@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="ecom.css">
     <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
     <link
@@ -77,7 +74,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i><br>
-                        <button>Add To Cart</button>
+                        <button onclick="add(item1)">Add To Cart</button>
                     </div>
                 </div>
                 <div class="crd">
@@ -89,10 +86,10 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i><br>
-                        <button>Add To Cart</button>
+                        <button >Add To Cart</button>
                     </div>
                 </div>
-                 <div class="crd">
+                <div class="crd">
                     <img src="srt7.jpg" alt="" onclick="showCard(this)">
                     <div class="txt">
                         <h3>Trending Shirt's</h3>
@@ -150,7 +147,7 @@
                         <button>Add To Cart</button>
                     </div>
                 </div>
-                 <div class="crd">
+                <div class="crd">
                     <img src="wn6.jpg" alt="" onclick="showCard(this)">
                     <div class="txt">
                         <h3>Trending Girl Dresses</h3>
@@ -166,8 +163,8 @@
         </div>
 
         <!-- footwear -->
-         
-        <div class="cardgirl">
+
+        <div class="footware">
             <div class="head">
                 <h1>Trending <span>Casual Footwear</span></h1>
             </div>
@@ -209,7 +206,7 @@
                         <button>Add To Cart</button>
                     </div>
                 </div>
-                 <div class="crd">
+                <div class="crd">
                     <img src="ft3.jpg" alt="" onclick="showCard(this)">
                     <div class="txt">
                         <h3>Trending Casual Footwear</h3>
@@ -229,23 +226,34 @@
         <div class="fullPage">
             <img id="cartImg" src=" " alt="">
             <div class="cartText">
-                <h1>Trends Offer : Trending Shop <br> Now</h1>
-                <h2>Special Price</h2>
-                <h2>$11</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <h1 id="productName">Trends Offer : Trending Shop <br> Now</h1>
+                <h2 id="productLabel">Special Price</h2>
+                <h2 id="productPrice">$11</h2>
+                <p id="productDetails"></p>
                 <div class="btn">
-                    <button>Buy Now</button>
+                    <button onclick="buyNow()">Buy Now</button>
                     <button onclick="addToCart()">Add To Cart</button>
-
                 </div>
                 <div class="btns">
-                    <button class="relode" onclick="location.reload()">Back </button>
+                    <button class="relode" onclick="goBack()">Back</button>
                 </div>
-            </div>
-            
+                <!-- Review Section Start -->
+                <div class="review-section">
+                    <h3>Leave a Review</h3>
+                    <div class="rating-stars" id="ratingStars">
+                        <span data-value="1">&#9733;</span>
+                        <span data-value="2">&#9733;</span>
+                        <span data-value="3">&#9733;</span>
+                        <span data-value="4">&#9733;</span>
+                        <span data-value="5">&#9733;</span>
+                    </div>
+                    <textarea id="reviewText" placeholder="Write your review..." rows="3"></textarea>
+                    <button onclick="submitReview()">Submit Review</button>
+                    <div id="reviewsList"></div>
+                </div>
+                <!-- Review Section End -->
 
+            </div>
         </div>
 
         <!-- add to cart -->
@@ -260,20 +268,21 @@
 
             <div class="trd">
                 <div class="trending">
-                    <img src="tr1.webp" alt="">
+                    <img src="wn4.jpg" alt="">
                     <div class="txt">
                         <h3>Trending Girl Cloths</h3><br>
                         <p>6 Fashionable Ways to Style A Crop Top
-When your OOTDs call for a bit of cuteness with a dash of chic, crop tops never fail to come through.</p><br>
+                            When your OOTDs call for a bit of cuteness with a dash of chic, crop tops never fail to come
+                            through.</p><br>
                         <a href="https://influencermarketinghub.com/best-fashion-blogs/">Read More</a>
                     </div>
                 </div>
                 <div class="trending">
-                    <img src="tr3.webp" alt="">
+                    <img src="m4.jpg" alt="">
                     <div class="txt">
                         <h3>Trending Boys Cloths</h3> <br>
-                        <p>During Travelling, a very casual outfit is great for young kids. Traveling cargo pants, joggers, or t
-rackies and also denim and t-shirt would be the best option for all age groups.</p><br>
+                        <p>Traveling cargo pants, joggers, or t
+                            rackies and also denim and t-shirt would be the best option for all age groups.</p><br>
                         <a href="https://www.apetogentleman.com/">Read More</a>
                     </div>
                 </div>
@@ -283,19 +292,26 @@ rackies and also denim and t-shirt would be the best option for all age groups.<
 
         <div class="about">
             <div class="aboutText">
-                <h1>#Know Us...</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, iure eos!</p>
+                <h1>About Us</h1>
+                <p>Whether you’re upgrading your lifestyle, looking for the perfect gift, or just browsing for
+                    inspiration, we’re here to make your shopping experience better every time.</p>
+                </p>
             </div>
 
             <div class="aboutus">
-                <img src="lap.png" alt="">
+                <img src="wb.jpg" alt="">
                 <div class="dumiText">
-                    <h1>Who we are ?</h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing Dolorum corrupti consequuntur sunt ipsam
-                        aperiam vel magni sequi eos sit amet consectetur adipisicing Dolorum corrupti consequuntur sunt
-                        ipsam aperiam vel magni sequi eos atque nam maxime dolorem fuga, rem eum iure quidem! Illo
-                        corporis, asperiores ipsum excepturi voluptates necessitatibus consectetur odit omnis hic
-                        praesentium autem, officiis dignissimos assumenda saepe.</p>
+                    <h1>Welcome to GoShoply</h1>
+                    <p>your one-stop destination for quality products at unbeatable prices.
+                        We believe shopping should be simple, enjoyable, and stress-free.
+                        That’s why we bring together a wide range of products — from everyday essentials to the latest
+                        trends — all in one place.</p>
+
+                    <p>At GoShoply, our mission is to:</p>
+                    <p>💡 Make shopping easier – Quick navigation, smart search, and smooth checkout.</p>
+                    <p>📦 Deliver value – Affordable prices without compromising on quality.</p>
+                    <p>🤝 Put customers first – Friendly support and a hassle-free return policy.</p>
+                    <p>🌱 Promote sustainability – Encouraging conscious choices to reduce waste.</p>
                 </div>
             </div>
         </div>
@@ -304,31 +320,59 @@ rackies and also denim and t-shirt would be the best option for all age groups.<
 
         <div class="contact">
             <div class="contactBanner">
-                <h1>#Let's Connect</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, iure eos!</p>
+                <h1>Connect Us</h1>
+                <p>Enter your email below to be the first to know about new collections and product launches.</p>
 
             </div>
             <div class="connect">
                 <div class="connectText">
                     <h1>Visit Our Office or Contact <br> Us Today</h1>
-                    <p>Address : Dablin Park, England, New york</p>
-                    <p>Contact : dumiemail@gmail.com</p>
+
+                    <p>Contact : goshoply@gmail.com</p>
                     <p>Number : 999999000011</p>
                 </div>
-                <img src="map.PNG" alt="">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019123456789!2d-122.419415484681!3d37.7749297797596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c1234567%3A0xabcdef1234567890!2sYour%20Business%20Name!5e0!3m2!1sen!2sus!4v1690000000000!5m2!1sen!2sus"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
 
-            <div class="form">
-                <h1>Connect with Us. Fill Form</h1>
-                <input type="text" placeholder="Enter Your FirstName"> <br>
-                <input type="text" placeholder="Enter Your LsstName"> <br>
-                <input type="text" placeholder="Enter Your Email"><br>
-                <input type="text" placeholder="Enter Your Number"><br>
-                <input type="text" placeholder="Enter Your Address"><br>
-                <button>Submit</button>
 
+            <div class="contact-flex-container">
+                <div class="contact-image">
+                    <img src="con.jpg" alt="Contact Us">
+                </div>
+                <div class="contact-form">
+                    <h1>Connect with Us</h1>
+                    <form>
+                        <div class="form-group">
+                            <label for="firstname">First Name</label>
+                            <input id="firstname" type="text" placeholder="Enter Your First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last Name</label>
+                            <input id="lastname" type="text" placeholder="Enter Your Last Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" placeholder="Enter Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="number">Phone Number</label>
+                            <input id="number" type="tel" placeholder="Enter Your Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input id="address" type="text" placeholder="Enter Your Address">
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
             </div>
+
         </div>
+
 
         <div class="letter">
             <div class="sign">
@@ -342,122 +386,76 @@ rackies and also denim and t-shirt would be the best option for all age groups.<
         </div>
 
         <!-- Footer -->
-<!-- 
-        <div class="footer">
-            <div class="Ftext">
-                <h1>GoShoply</h1>
-                <p>Service</p>
-                <p>Customer</p>
-                <p>Satisfation</p> 
-                 <ul class="footer-list">
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Facebook</a>
-          </li>
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Instagram</a>
-          </li>
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Twitter</a>
-          </li>
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Youtube</a>
-          </li>
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Google Map</a>
-          </li>
-
-        </ul>
-
+        <footer>
+            <div class="section__container footer__container">
+                <div class="footer__col">
+                    <div class="footer__logo">
+                        <a href="#">GoShoply</a>
+                    </div>
+                    <p>Complete your style with awesome clothes from us.</p>
+                    <ul class="footer__socials">
+                        <li>
+                            <a href="#"><i class="ri-facebook-fill"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="ri-instagram-line"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="ri-linkedin-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">Store Location</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Legal</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="Ftext">
-                <h3>About US</h3>
-                <p>Adrress : Lorem ipsum dolor sit amet,<br> consectetur adipisicing <br> Perferendis, excepturi alias.
-                </p>
-                <p>Service</p>
-                <p>Customer</p>
-                <p>Satisfation</p>
-                
-
+            <div class="footer__bar">
+                Copyright © 2025 GoShoply. All rights reserved.
             </div>
-            <div class="Ftext">
-                <h3>Contect</h3>
-                <p>9989003229</p>
-                <p>Customer</p>
-                <p>Comming up..</p>
-                <p>New Arrival</p>
-
-            </div>
-            <div class="Ftext">
-                <h3>Trending</h3>
-                <p>Service</p>
-                <p>Customer</p>
-                <p>SHops</p>
-                <p></p>
-
-            </div>
-        </div> -->
-
-        
-    <footer>
-      <div class="section__container footer__container">
-        <div class="footer__col">
-          <div class="footer__logo">
-            <a href="#">GoShoply</a>
-          </div>
-          <p>Complete your style with awesome clothes from us.</p>
-          <ul class="footer__socials">
-            <li>
-              <a href="#"><i class="ri-facebook-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-instagram-line"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-twitter-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-linkedin-fill"></i></a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Company</h4>
-          <ul class="footer__links">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Quick Links</h4>
-          <ul class="footer__links">
-            <li><a href="#">Store Location</a></li>
-            <li><a href="#">Order Tracking</a></li>
-            <li><a href="#">Size Guide</a></li>
-            <li><a href="#">FAQs</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Legal</h4>
-          <ul class="footer__links">
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bar">
-        Copyright © 2025 GoShoply. All rights reserved.
-      </div>
-    </footer>
+        </footer>
 
     </div>
     <script src="ecom.js"></script>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button onclick="closeCart()" class="close-cart">&times;</button>
+        </div>
+        <ul id="cartItems"></ul>
+        <div class="cart-footer">
+            <strong>
+                Items: <span id="cartCount">0</span> &nbsp; | &nbsp;
+                Total: $<span id="cartTotal">0</span>
+            </strong>
+        </div>
+    </div>
 </body>
 
 </html>

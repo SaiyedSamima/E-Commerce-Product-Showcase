@@ -90,7 +90,7 @@ document.getElementById("blog").style.color="white";
 document.getElementById("home").style.color="white";
 document.getElementById("shop").style.color="white";
 document.getElementById("contact").style.color="white";
-document.getElementById("about").style.color="white"
+document.getElementById("about").style.color="white";
 document.getElementById("contact").style.color="rgb(2, 173, 173)"
 
 }
@@ -110,6 +110,7 @@ function show(img){
    contact.style.display="none"
     document.querySelector(".cart").style.display="flex"
 }
+
 
 
 function addCart(){

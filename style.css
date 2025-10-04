@@ -131,6 +131,10 @@ nav ul{
     transition: 0.6s ease;
     cursor: pointer;
 }
+.card .crd button:hover{
+    background-color: rgb(8, 83, 83);
+    cursor: pointer;
+}
 .crd .txt {
     margin-left: 28px;
  
@@ -233,19 +237,6 @@ nav ul{
     color: white;
 }
 
-/* .footer{
-    display: flex;
-    justify-content: center;
-    background-color: rgb(219, 218, 218);
-    padding: 42px;
-   
-}
-.footer .Ftext{
-    margin-inline: 72px;
-}
-.Ftext p{
-    margin-top: 22px;
-} */
 
 
 /* about */
@@ -258,7 +249,7 @@ nav ul{
     color: white;
     padding: 54px;
     font-size: 18px;
-
+   
 }
 .aboutus{
     display: flex;
@@ -269,16 +260,23 @@ nav ul{
     margin-left: 17%;
     margin-top: 8%;
     border-radius: 6px;
+    
 }
+
+
 .dumiText{
-    margin-top: 66px;
+    margin-top: 30px;
+    margin-left: 22px;
+    
 }
 .dumiText p{
     margin-top: 11px;
+    
 }
 
 .aboutus img{
     width: 54%;
+     height: 400px;
 }
 
 /* contact */
@@ -290,6 +288,7 @@ nav ul{
     background-color: rgb(4, 4, 44);
     color: white;
     padding: 55px;
+    
 }
 .connect{
     display: flex;
@@ -308,32 +307,97 @@ nav ul{
 .contact img{
     width: 50%;
 }
-.contact img:hover{
-    width: 52%;
-    transition: 0.8s ease;
+.connect:hover{
+   
+ transform: scale(1.03);
+    transition: transform 0.4s ease;
     cursor: pointer;
+}
 
+
+/* ...existing code... */
+.contact-image img:hover {
+    transform: scale(1.03);
+    transition: transform 0.4s ease;
+    cursor: pointer;
 }
-.form{
-    text-align: center;
-    margin-top: 73px;
+.contact-flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  background: #fff;
+  padding: 40px 40px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
 }
-.form button{
-    width: 340px;
-    height: 40px;
-    border: none;
-    background-color: rgb(1, 87, 87);
-    color: white;
-    font-size: 22px;
-    margin-top: 22px;
+
+.contact-image img {
+  width: 340px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
 }
-.form input{
-    width: 320px;
-    padding: 8px;
-    outline: none;
-    margin: 3px;
-    margin-top: 11px;
+
+.contact-form {
+  flex: 1;
+  min-width: 320px;
 }
+
+.contact-form h1 {
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #222;
+}
+.contact-form input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  width: 103%;
+  height: 40px;
+  background-color: rgb(3, 183, 183);
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+ 
+}
+.contact-form button:hover{
+    background-color: rgb(3, 134, 134);
+}
+
+@media (max-width: 900px) {
+  .contact-flex-container {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 10px;
+  }
+  .contact-image img {
+    width: 100%;
+    height: 220px;
+  }
+}
+/* ...existing code... */
+
 
 /* FullPage */
 
@@ -354,12 +418,25 @@ nav ul{
 .cartText .btn button{
     width: 140px;
     height: 40px;
-    background: rgb(247, 133, 2);
-    color: white;
+    background: rgb(173, 173, 27);
+    color: rgb(0, 0, 0);
     border: none;
     font-size: 22px;
     margin-top: 22px;
+    
 }
+/* ...existing code... */
+.fullPage #cartImg {
+    max-width: 400px;
+    max-height: 400px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    margin: 20px;
+}
+/* ...existing code... */
+
 .btn button:hover{
     background-color: rgb(253, 173, 25);
     cursor: pointer;
@@ -368,7 +445,7 @@ nav ul{
     margin-top: 11px;
 }
 .relode{
-    background-color: rgb(3, 75, 75);
+    background-color: rgb(4, 141, 141);
     color: white;
     width: 140px;
     height: 34px;
@@ -377,9 +454,8 @@ nav ul{
     margin-top: 22px;
 }
 .relode:hover{
-    background-color: rgb(4, 141, 141);
+    background-color: rgb(3, 94, 94);
     cursor: pointer;
-
 }
 
 
@@ -506,4 +582,130 @@ footer {
   }
 }
 
+
+
+/* cart */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 350px;
+  height: 700px;
+  background: #fff;
+  box-shadow: -2px 0 12px rgba(0,0,0,0.15);
+  z-index: 9999;
+  transition: right 0.3s;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.cart-sidebar.open {
+  right: 0;
+}
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close-cart {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+#cartItems {
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  overflow-y: auto;
+}
+.cart-footer {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+/* ...existing code... */
+.cart-sidebar button {
+  background: rgb(0, 0, 0);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background 0.2s;
+}
+
+.cart-sidebar button:hover {
+  background: rgb(3, 183, 183);
+}
+/* ...existing code... */
+
+
+/* Responsive review section */
+
+/* ...existing code... */
+.review-section {
+  margin-top: 30px;
+  background: #f7f7f7;
+  padding: 18px 14px;
+  border-radius: 8px;
+  width: 500px;
+}
+.review-section h3 {
+  margin-bottom: 10px;
+  color: #222;
+}
+.rating-stars {
+  font-size: 1.7rem;
+  color: #ccc;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.rating-stars .selected,
+.rating-stars .hovered {
+  color: #ffb300;
+}
+.review-section textarea {
+  width: 485px;
+  min-height: 50px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  
+}
+.review-section button {
+  background: rgb(1, 148, 148);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.review-section button:hover {
+  background: rgb(3, 183, 183);
+}
+#reviewsList {
+  margin-top: 15px;
+}
+#reviewsList .review {
+  background: #eee;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+#reviewsList .review .stars {
+  color: #ffb300;
+  font-size: 1.1rem;
+  margin-right: 6px;
+}
 /* ...existing code... */
